@@ -1,0 +1,9 @@
+pila pilaLarga {
+  crear([5, 10, 15, 20])!
+  empujar(25)!
+  empujar(30)!
+  empujar(35)!
+  empujar(40)!
+  empujar(45)!
+  empujar(50)!
+}
