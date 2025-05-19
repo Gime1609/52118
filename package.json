@@ -1,7 +1,7 @@
 {
   "name": "analizador-lenguaje-pila",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "analizador.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "antlr4": "^4.13.2",
-    "fs": "^0.0.1-security"
-  }
+    "antlr4": "^4.13.2"
+  },
+  "type": "module"
+
 }

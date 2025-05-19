@@ -1,19 +1,18 @@
-grammar PilaGrammar;
+grammar pilagrammar;
 
-// Parser rules
-programa : 'pila' NOMBRE '{' comandos '}' ;
-comandos : (operacion)* ;
-operacion : push | pop | peek | crear ;
-crear : 'crear' '(' lista ')' '!' ;
-push : 'empujar' '(' valor ')' '!' ;
-pop : 'sacar' '(' ')' '!' ;
-peek : 'mirar' '(' ')' '!' ;
-valor : NUMERO | TEXTO ;
-lista : '[' (valor (',' valor)*)? ']' ;
+programa: 'pila' NOMBRE '{' instruccion* '}';
 
-// Lexer rules
-NOMBRE : [a-zA-Z]+ ;
-NUMERO : [0-9]+ ;
-TEXTO : '"' (~["])* '"' ;
-WS : [ \t\r\n]+ -> skip ;
-COMMENT : '#' .*? '\r'? '\n' -> skip ;
+instruccion
+    : crear
+    | empujar
+    ;
+
+crear: 'crear' '(' lista ')' '!';
+empujar: 'empujar' '(' NUMERO ')' '!';
+
+lista: '[' (NUMERO (',' NUMERO)*)? ']';
+
+NOMBRE: [a-zA-Z_][a-zA-Z_0-9]*;
+NUMERO: [0-9]+;
+
+WS: [ \t\r\n]+ -> skip;

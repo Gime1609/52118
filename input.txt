@@ -1,0 +1,5 @@
+pila otraPila {
+  crear([1, 2, 3])!
+  empujar("texto")!       
+  empujar(50)              
+}
